@@ -1,0 +1,97 @@
+:root {
+    background-color: lightblue;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* font-size: ; */
+    font-family: 'Vidaloka', sans-serif;
+    color: white;
+}
+
+.h1 {
+    font-size: 5.4rem;
+    color: ghostwhite;
+    margin-bottom: 5rem;
+}
+
+.title-of-game {
+    margin-bottom: 10%;
+}
+
+.h2 {
+    font-size: 4.2rem;
+    margin-bottom: 4rem;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding:2rem;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* thank you to MrPirrera codepen.io for the button gradient design */
+
+.btn {
+    font-size: 2.4rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: white;
+    background-image: linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%);
+    border-radius: 15px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 rgb(146, 84, 128);
+    transition: transform 150ms;
+    transform: 1.03;
+}
+
+.btn[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+#highscore-btn {
+    background-image: linear-gradient(to right, #801d5b 0%, #8fd3f4 51%, #ffffff 100%);
+
+}
+
+.fa-crown {
+    font-size: 2.5;
+    margin-left: 1rem;
+}
