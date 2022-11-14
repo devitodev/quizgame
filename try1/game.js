@@ -63,7 +63,7 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         window.localStorage.setItem('mostRecentScore', score);
 
-        return window.location.assign('/end.html');
+        return window.location.assign('end.html');
     }
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
@@ -88,19 +88,21 @@ choices.forEach(choice => {
         if(!acceptingAnswers) return;
         acceptingAnswers = false;
         const selectedChoice = e.target;
-        const selectedAnswer = selectedChoice.dataset('number')
+        const selectedAnswer = selectedChoice.dataset['number']
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
         if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
         }
+        
         selectedChoice.parentElement.classList.add(classToApply)
 
         setTimeout(() => {
           selectedChoice.parentElement.classList.remove(classToApply)
           getNewQuestion()  
         }, 1000)
+        console.log(here)
     })
 })
 
