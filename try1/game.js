@@ -3,13 +3,13 @@ const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
+const timerContainer = document.querySelector('.timer');
 
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0
 let availableQuestions = []
-
 
 // Definitions provided by MDN and w3schools
 
@@ -105,6 +105,7 @@ choices.forEach(choice => {
         console.log(here)
     })
 })
+
 
 
 incrementScore = num => {
