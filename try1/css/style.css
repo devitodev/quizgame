@@ -149,6 +149,7 @@
 .hud-prefix {
     text-align: center;
     font-size: 2rem;
+    margin-top: 100px;
 }
 
 .hud-main-text {
@@ -222,6 +223,19 @@ input::placeholder {
     font-size: 2rem;
     color: black;
 }
+
+/* CSS for High Score Page */
+
+#highScoresList {
+    list-style: none;
+    margin-bottom: 4rem;
+}
+
+.high-score {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}
+
 
 /* Media Query for Game Page */
 

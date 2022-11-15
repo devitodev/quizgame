@@ -8,8 +8,8 @@ const timerContainer = document.querySelector('.timer');
 let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
-let questionCounter = 0
-let availableQuestions = []
+let questionCounter = 0;
+let availableQuestions = [];
 
 // Definitions provided by MDN and w3schools
 
@@ -63,9 +63,10 @@ getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         window.localStorage.setItem('mostRecentScore', score);
 
-        return window.location.assign('end.html');
+        return window.location.assign('../endpage/end.html');
     }
     questionCounter++
+    
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
 
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`;
@@ -102,7 +103,6 @@ choices.forEach(choice => {
           selectedChoice.parentElement.classList.remove(classToApply)
           getNewQuestion()  
         }, 1000)
-        console.log(here)
     })
 })
 
@@ -115,4 +115,51 @@ incrementScore = num => {
 
 startGame()
 
+// // JS for End Page
 
+// const username = document.querySelector('#username');
+// const saveScoreBtn = document.querySelector('#saveScoreBtn');
+// const finalScore = document.querySelector('#lastScore');
+// const mostRecentScore = document.querySelector('#mostRecentScore');
+// console.log(username)
+
+// const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+
+// const MAX_HIGH_SCORES = 5;
+
+// finalScore.innerText = mostRecentScore;
+
+// username.addEventListener('keyup', () => {
+//     saveScoreBtn.disabled = !username.value
+// })
+
+// saveHighScore = e => {
+//     e.preventDefault()
+
+//     const score = {
+//         score: mostRecentScore,
+//         name: username.value
+//     }
+
+//     highScores.push(score)
+
+//     highScores.sort((a,b) => {
+//         return b.score - a.score
+//     })
+
+//     highScores.splice(5)
+
+//     localStorage.setItem('highScores', JSON.stringify(highScores))
+
+//     window.location.assign('/')
+// }
+
+
+// // JS for the HighScores page
+
+// const highScoresList = document.querySelector('#highScoresList')
+
+// highScoresList.innerHTML =
+// highScores.map(score => {
+//     return `<li class= "high-score">${score.name} - ${score.score}</li>`
+// }).join('')
