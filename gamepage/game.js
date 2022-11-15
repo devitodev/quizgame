@@ -119,17 +119,25 @@ incrementScore = num => {
 startGame()
 
 //  JS for timer
-var timerText = document.querySelector('.timer')
-let currentTime = 0;
-let interval = 0;
 
-let countDown =  () => {
-    if(currentTime === 20){
-        clearInterval(interval);
-    } else {
-        timer++;
-    }
+var timerText = document.querySelector('.timer')
+timeLeft = 100;
+secondsPassed = 0;
+var interval;
+var nowQuestion = 0;
+
+function timerBegin () {
+    timerText.innerText = timeLeft;
+  
+    interval = setInterval(function (){
+        secondsPassed++;
+        timerText.textContent = timeLeft - secondsPassed;
+
+        if (secondsPassed >= timeLeft) {
+            nowQuestion = questions.length;
+        }
+    }, 1000);
 }
 
-setInterval(countDown,1000);
-interval = setInterval(countDown, 1000)
+
+
