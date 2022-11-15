@@ -174,8 +174,11 @@
 
 /* Styling for timer */
 
-.timer {
-    display: none;
+.timer h1 {
+    color: whitesmoke;
+    font-size: 2rem;
+    margin-top: 280px;
+    margin-right: 200px;
 }
 
 /* CSS for End Page */

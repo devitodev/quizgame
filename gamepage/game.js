@@ -1,3 +1,6 @@
+// A huge thank you to Brian Design on YouTube for all of the guidance and insight. 
+// Your teaching and tricks have been priceless for my coding!
+
 const question = document.querySelector('#question');
 const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
@@ -115,51 +118,18 @@ incrementScore = num => {
 
 startGame()
 
-// // JS for End Page
+//  JS for timer
+var timerText = document.querySelector('.timer')
+let currentTime = 0;
+let interval = 0;
 
-// const username = document.querySelector('#username');
-// const saveScoreBtn = document.querySelector('#saveScoreBtn');
-// const finalScore = document.querySelector('#lastScore');
-// const mostRecentScore = document.querySelector('#mostRecentScore');
-// console.log(username)
+let countDown =  () => {
+    if(currentTime === 20){
+        clearInterval(interval);
+    } else {
+        timer++;
+    }
+}
 
-// const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
-
-// const MAX_HIGH_SCORES = 5;
-
-// finalScore.innerText = mostRecentScore;
-
-// username.addEventListener('keyup', () => {
-//     saveScoreBtn.disabled = !username.value
-// })
-
-// saveHighScore = e => {
-//     e.preventDefault()
-
-//     const score = {
-//         score: mostRecentScore,
-//         name: username.value
-//     }
-
-//     highScores.push(score)
-
-//     highScores.sort((a,b) => {
-//         return b.score - a.score
-//     })
-
-//     highScores.splice(5)
-
-//     localStorage.setItem('highScores', JSON.stringify(highScores))
-
-//     window.location.assign('/')
-// }
-
-
-// // JS for the HighScores page
-
-// const highScoresList = document.querySelector('#highScoresList')
-
-// highScoresList.innerHTML =
-// highScores.map(score => {
-//     return `<li class= "high-score">${score.name} - ${score.score}</li>`
-// }).join('')
+setInterval(countDown,1000);
+interval = setInterval(countDown, 1000)
