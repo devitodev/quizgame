@@ -17,17 +17,17 @@ let questions = [
     {
     question: 'What is a boolean value?',
     choice1: 'A truth value that indicates either true or false',
-    choice2: 'a string is a sequence of characters used to represent text',
+    choice2: 'a string is a sequence of characters representing text',
     choice3: 'a numeric data type',
-    choice4: 'data type that can represent integers in the arbitrary precision format',
+    choice4: 'data type that can represent integers only',
     answer: 1,
     },
     {
     question: 'What is a string?',
     choice1: 'a sequence of characters used to represent text.',
-    choice2: 'a primitive value automatically assigned to variables that have just been declared, or to formal arguments for which there are no actual arguments.',
-    choice3: 'a reference that points, generally intentionally, to a nonexistent or invalid object or address.',
-    choice4: 'represents a unique "hidden" identifier that no other code can accidentally access',
+    choice2: 'a primitive value automatically assigned to a variable.',
+    choice3: 'a reference that points to a nonexistent or invalid object.',
+    choice4: 'represents a unique "hidden" identifier.',
     answer: 1,
     },
     {
