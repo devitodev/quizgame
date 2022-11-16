@@ -120,24 +120,27 @@ startGame()
 
 //  JS for timer
 
-var timerText = document.querySelector('.timer')
-timeLeft = 100;
+var timerText = document.querySelector('#time-left')
+timeLeft = 5;
 secondsPassed = 0;
 var interval;
 var nowQuestion = 0;
 
+
 function timerBegin () {
-    timerText.innerText = timeLeft;
-  
-    interval = setInterval(function (){
+    timerText.textContent = timeLeft;
+   var timeInterval = setInterval(function (){
         secondsPassed++;
         timerText.textContent = timeLeft - secondsPassed;
 
-        if (secondsPassed >= timeLeft) {
-            nowQuestion = questions.length;
+        if (timeLeft === 0) {
+            timerText.textContent = '';
+            clearInterval(timeInterval);
         }
     }, 1000);
 }
+
+timerBegin()
 
 
 
