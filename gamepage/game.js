@@ -65,7 +65,6 @@ startGame = () => {
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         window.localStorage.setItem('mostRecentScore', score);
-
         return window.location.assign('../endpage/end.html');
     }
     questionCounter++
@@ -98,6 +97,11 @@ choices.forEach(choice => {
 
         if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
+        } else {
+            timeLeft -= 15
+            if (timeLeft <= 0) {
+                timeLeft = 0
+            } 
         }
         
         selectedChoice.parentElement.classList.add(classToApply)
@@ -121,21 +125,20 @@ startGame()
 //  JS for timer
 
 var timerText = document.querySelector('#time-left')
-timeLeft = 5;
-secondsPassed = 0;
-var interval;
-var nowQuestion = 0;
-
+var timeLeft = 30;
+var timeInterval;
 
 function timerBegin () {
     timerText.textContent = timeLeft;
-   var timeInterval = setInterval(function (){
-        secondsPassed++;
-        timerText.textContent = timeLeft - secondsPassed;
+   timeInterval = setInterval(function (){
+        timeLeft--
+        timerText.textContent = timeLeft;
 
-        if (timeLeft === 0) {
-            timerText.textContent = '';
+        if (timeLeft <= 0) {
+            timerText.textContent = 0;
             clearInterval(timeInterval);
+            window.localStorage.setItem('mostRecentScore', score);
+            return window.location.assign('../endpage/end.html');
         }
     }, 1000);
 }
