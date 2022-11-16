@@ -49,11 +49,61 @@ let questions = [
     choice4: '()',
     answer: 3,
     },
+    {
+    question: 'The main utility of JavaScript is to...',
+    choice1: 'define the content of web pages',
+    choice2: 'specify the layout of web pages',
+    choice3: 'program the behavior of web pages',
+    choice4: 'make a bowl of Coco-Puffs',
+    answer: 3,
+            },
+    {
+    question: 'Do I deserve a 100 on this challenge assignment?',
+    choice1: 'No',
+    choice2: 'No',
+    choice3: 'No',
+    choice4: 'Absolutely',
+    answer: 4,
+        },
+    {
+    question: 'Which variable keyword is immutable?',
+    choice1: 'const',
+    choice2: 'var',
+    choice3: 'let',
+    choice4: 'flügelhorn',
+    answer: 1,
+            },
+    {
+    question: 'Which symbol is used to calculate a remainder in JavaScript?',
+    choice1: '&',
+    choice2: '||',
+    choice3: '%',
+    choice4: '💩',
+    answer: 3,
+            },
+    {
+    question: 'Single-line comments in JS start with which symbols?',
+    choice1: '//',
+    choice2: '||',
+    choice3: '\\(”▔□▔)/',
+    choice4: '(○>ω<)ﾉﾞ',
+    answer: 1,
+            },
+    {
+    question: 'JavaScript is a cool name',
+    choice1: 'Sure, I guess',
+    choice2: 'No',
+    choice3: 'Please let me leave this place',
+    choice4: 'I\'m hungry',
+    answer: 1,
+            },
+    
+    
 ]
 
 
 const SCORE_POINTS = 100
-const MAX_QUESTIONS = 4
+const MAX_QUESTIONS = 10
 
 startGame = () => {
     questionCounter = 0
@@ -125,7 +175,7 @@ startGame()
 //  JS for timer
 
 var timerText = document.querySelector('#time-left')
-var timeLeft = 30;
+var timeLeft = 50;
 var timeInterval;
 
 function timerBegin () {
